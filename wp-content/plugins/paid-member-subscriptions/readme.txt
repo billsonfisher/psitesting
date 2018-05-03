@@ -4,7 +4,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-paid-member-subscriptions/
 Tags: membership, paid membership, membership plan, membership level, member, members, subscription plans, user payments, paying users, paid users, restrict content, restrict access, content protection, content restriction, recurring payments, woocommerce
 Requires at least: 3.1
 Tested up to: 4.9.4
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,15 +161,19 @@ For more information please check out [Paid Member Subscriptions documentation](
 
 == Changelog ==
 
+= 1.7.1 =
+* Small modifications required for the new addon that will be launched
+* Added missing addons to Basic Info page and a notice for Fixed Period Memberships addon
+
 = 1.7.0 =
 * Added individualized classes on the field containers on register and profile forms
 * Added hooks below each item in Subscription Plan Details metabox
 * Added a filter on the pms_get_subscription_plans function output
 
 = 1.6.9 =
-* Fixed a possible notice if there was no subscription plan selected on the Profile Builder form
-* Fixed issue with Woocommerce discounts that did not get applied to products that existed before we activated PMS
-* Fixed payments that were not showing in reports for the last day of the month.
+* Fixed: a possible notice if there was no subscription plan selected on the Profile Builder form
+* Fixed: issue with Woocommerce discounts that did not get applied to products that existed before we activated PMS
+* Fixed: payments that were not showing in reports for the last day of the month.
 * Added GMT offset to the date we display in the payment history shortcode.
 
 = 1.6.8 =

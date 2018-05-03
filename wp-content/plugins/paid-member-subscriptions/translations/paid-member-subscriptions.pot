@@ -90,7 +90,7 @@ msgstr ""
 msgid "Start Date"
 msgstr ""
 
-#: ../pms-add-on-discount-codes/class-admin-discount-codes.php:119, ../pms-add-on-discount-codes/views/view-meta-box-discount-codes.php:105, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:140, includes/class-payment-gateway-stripe.php:136, ../pms-add-on-member-subscription-fixed-period/includes/admin/functions-admin-pages.php:40, ../paid-member-subscriptions/includes/admin/views/view-page-members-add-new-edit-subscription.php:238, ../paid-member-subscriptions/includes/views/shortcodes/view-shortcode-account-subscription-details.php:58
+#: ../pms-add-on-discount-codes/class-admin-discount-codes.php:119, ../pms-add-on-discount-codes/views/view-meta-box-discount-codes.php:105, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:140, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:136, ../pms-add-on-member-subscription-fixed-period/includes/admin/functions-admin-pages.php:40, ../paid-member-subscriptions/includes/admin/views/view-page-members-add-new-edit-subscription.php:238, ../paid-member-subscriptions/includes/views/shortcodes/view-shortcode-account-subscription-details.php:58
 msgid "Expiration Date"
 msgstr ""
 
@@ -313,6 +313,10 @@ msgstr ""
 
 #: ../pms-add-on-discount-codes/index.php:350
 msgid ", then %s %s every %s."
+msgstr ""
+
+#: ../pms-add-on-discount-codes/index.php:357, ../pms-add-on-discount-codes/index.php:359
+msgid "Amount to be charged "
 msgstr ""
 
 #: ../pms-add-on-discount-codes/index.php:499
@@ -576,7 +580,7 @@ msgstr ""
 msgid "Please select a subscription plan."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/class-form-handler.php:263, includes/functions-filters.php:95
+#: ../paid-member-subscriptions/includes/class-form-handler.php:263, ../pms-add-on-stripe/includes/functions-filters.php:95
 msgid "Something went wrong."
 msgstr ""
 
@@ -1988,7 +1992,7 @@ msgstr ""
 msgid "Subscription Initial Payment"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/functions-payment.php:379, includes/functions-filters.php:35
+#: ../paid-member-subscriptions/includes/functions-payment.php:379, ../pms-add-on-stripe/includes/functions-filters.php:35
 msgid "Subscription Recurring Payment"
 msgstr ""
 
@@ -2000,15 +2004,15 @@ msgstr ""
 msgid "Subscription Upgrade Payment"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/functions-plugin-notifications.php:100
-msgid "Automatically generate PDF invoices for each subscription payment using the new <strong>Invoices</strong> add-on."
+#: ../paid-member-subscriptions/includes/functions-plugin-notifications.php:105, ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:155
+msgid "The Fixed Period Membership Add-On allows your Subscriptions to end at a specific date."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/functions-plugin-notifications.php:101
+#: ../paid-member-subscriptions/includes/functions-plugin-notifications.php:106
 msgid "Check it out!"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/functions-plugin-notifications.php:102
+#: ../paid-member-subscriptions/includes/functions-plugin-notifications.php:107
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -2350,7 +2354,7 @@ msgstr ""
 msgid "Email Reminder Details"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-admin.php:21
+#: ../pms-add-on-invoices/includes/functions-admin.php:21, ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:195
 msgid "Invoices"
 msgstr ""
 
@@ -2366,15 +2370,15 @@ msgstr ""
 msgid "The {{number}} tag is required under Format."
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:57, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:154, includes/class-payment-gateway-stripe.php:150, includes/views/view-billing-cc-form.php:74
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:57, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:154, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:150, ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:74
 msgid "Billing Details"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:67, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:164, includes/class-payment-gateway-stripe.php:160
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:67, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:164, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:160
 msgid "Billing First Name"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:79, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:176, includes/class-payment-gateway-stripe.php:172
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:79, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:176, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:172
 msgid "Billing Last Name"
 msgstr ""
 
@@ -2390,23 +2394,23 @@ msgstr ""
 msgid "If entered, this will appear on the invoice, replacing the First and Last Name."
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:114, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:188, includes/class-payment-gateway-stripe.php:184
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:114, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:188, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:184
 msgid "Billing Address"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:126, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:200, includes/class-payment-gateway-stripe.php:196
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:126, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:200, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:196
 msgid "Billing City"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:138, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:212, includes/class-payment-gateway-stripe.php:208
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:138, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:212, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:208
 msgid "Billing Zip / Postal Code"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:148, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:223, includes/class-payment-gateway-stripe.php:219
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:148, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:223, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:219
 msgid "Billing Country"
 msgstr ""
 
-#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:161, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:236, includes/class-payment-gateway-stripe.php:232
+#: ../pms-add-on-invoices/includes/functions-form-extra-fields.php:161, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:236, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:232
 msgid "Billing State / Province"
 msgstr ""
 
@@ -2426,7 +2430,63 @@ msgstr ""
 msgid "Add New Subscription"
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/extend/functions-pb-redirect.php:115, extend/functions-pb-redirect.php:46
+#: includes/functions-admin.php:19, includes/functions-admin.php:26
+msgid "Pay What You Want"
+msgstr ""
+
+#: includes/functions-admin.php:30
+msgid "Enable Pay What You Want Pricing?"
+msgstr ""
+
+#: includes/functions-admin.php:32
+msgid "Enabling this will allow users to set their own price when purchasing this subscription. This will override the subscription price set above, which will be used as the recommended price."
+msgstr ""
+
+#: includes/functions-admin.php:36
+msgid "Minimum price:"
+msgstr ""
+
+#: includes/functions-admin.php:40
+msgid "Enter the minimum price allowed for this subscription plan. Leaving it empty will set the minimum price equal to the subscription price."
+msgstr ""
+
+#: includes/functions-admin.php:42
+msgid "Maximum price:"
+msgstr ""
+
+#: includes/functions-admin.php:46
+msgid "Enter the maximum price allowed for this subscription plan. Leaving it empty will imply no maximum price is set."
+msgstr ""
+
+#: includes/functions-admin.php:48
+msgid "Label:"
+msgstr ""
+
+#: includes/functions-admin.php:52
+msgid "Text that will be displayed on the front-end, after the subscription plan name and before the price input."
+msgstr ""
+
+#: includes/functions.php:68
+msgid "Please enter a price for the selected subscription plan."
+msgstr ""
+
+#: includes/functions.php:74
+msgid "Please enter a numeric price, greater than zero."
+msgstr ""
+
+#: includes/functions.php:90
+msgid "Please enter a price between %1$s and %2$s."
+msgstr ""
+
+#: includes/functions.php:97
+msgid "Please enter a price greater than or equal to %s."
+msgstr ""
+
+#: includes/functions.php:106
+msgid "Please enter a price less than or equal to %s."
+msgstr ""
+
+#: ../pms-add-on-paypal-express-pro/extend/functions-pb-redirect.php:115, ../pms-add-on-stripe/extend/functions-pb-redirect.php:46
 msgid "You will soon be redirected automatically. If you see this page for more than 5 seconds, please click <a href=\"%1$s\">here</a>"
 msgstr ""
 
@@ -2454,19 +2514,19 @@ msgstr ""
 msgid "No request response received."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:111, includes/class-payment-gateway-stripe.php:107, includes/views/view-billing-cc-form.php:23
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:111, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:107, ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:23
 msgid "Credit Card Information"
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:120, includes/class-payment-gateway-stripe.php:116
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:120, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:116
 msgid "Card Number"
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:131, includes/class-payment-gateway-stripe.php:127
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:131, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:127
 msgid "Card CVV"
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:350, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:494, includes/class-payment-gateway-stripe-legacy.php:146, includes/class-payment-gateway-stripe-legacy.php:152, includes/class-payment-gateway-stripe-legacy.php:198, includes/class-payment-gateway-stripe.php:425, includes/class-payment-gateway-stripe.php:431, ../paid-member-subscriptions/extend/profile-builder/front-end/subscription-plans-field.php:114
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:350, ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:494, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:146, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:152, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:198, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:425, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:431, ../paid-member-subscriptions/extend/profile-builder/front-end/subscription-plans-field.php:114
 msgid "Something went wrong. Please try again."
 msgstr ""
 
@@ -2482,31 +2542,31 @@ msgstr ""
 msgid "Error code:"
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:594, includes/class-payment-gateway-stripe-legacy.php:527
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:594, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:527
 msgid "Please enter a Billing First Name."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:595, includes/class-payment-gateway-stripe-legacy.php:528
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:595, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:528
 msgid "Please enter a Billing Last Name."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:596, includes/class-payment-gateway-stripe-legacy.php:529
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:596, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:529
 msgid "Please enter a Billing Address."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:597, includes/class-payment-gateway-stripe-legacy.php:530
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:597, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:530
 msgid "Please enter a Billing City."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:598, includes/class-payment-gateway-stripe-legacy.php:531
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:598, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:531
 msgid "Please enter a Billing State."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:599, includes/class-payment-gateway-stripe-legacy.php:532
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:599, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:532
 msgid "Please enter a Billing Country."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:600, includes/class-payment-gateway-stripe-legacy.php:533
+#: ../pms-add-on-paypal-express-pro/includes/class-payment-gateway-paypal-pro.php:600, ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:533
 msgid "Please enter a Billing ZIP code."
 msgstr ""
 
@@ -2542,7 +2602,7 @@ msgstr ""
 msgid "Your PayPal API settings are missing. In order to make payments you will need to add your API credentials %1$s here %2$s."
 msgstr ""
 
-#: ../pms-add-on-paypal-express-pro/includes/functions.php:225, includes/functions-actions.php:25
+#: ../pms-add-on-paypal-express-pro/includes/functions.php:225, ../pms-add-on-stripe/includes/functions-actions.php:25
 msgid "This message is visible only by Administrators."
 msgstr ""
 
@@ -2566,23 +2626,23 @@ msgstr ""
 msgid "Click the BACK button on your browser, and try again."
 msgstr ""
 
-#: includes/class-payment-gateway-stripe-legacy.php:91, includes/class-payment-gateway-stripe.php:271, includes/class-payment-gateway-stripe.php:367
+#: ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:91, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:271, ../pms-add-on-stripe/includes/class-payment-gateway-stripe.php:367
 msgid "Stripe API key is not valid."
 msgstr ""
 
-#: includes/class-payment-gateway-stripe-legacy.php:534
+#: ../pms-add-on-stripe/includes/class-payment-gateway-stripe-legacy.php:534
 msgid "An error occurred. Please try again."
 msgstr ""
 
-#: includes/functions-actions.php:24
+#: ../pms-add-on-stripe/includes/functions-actions.php:24
 msgid "Your Stripe API settings are missing. In order to make payments you will need to add your API credentials %1$s here %2$s."
 msgstr ""
 
-#: includes/functions-filters.php:18
+#: ../pms-add-on-stripe/includes/functions-filters.php:18
 msgid "Credit / Debit Card"
 msgstr ""
 
-#: includes/functions-filters.php:34
+#: ../pms-add-on-stripe/includes/functions-filters.php:34
 msgid "Card - One Time"
 msgstr ""
 
@@ -3370,79 +3430,79 @@ msgstr ""
 msgid "Default WordPress Recover Password Form"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:21
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:21
 msgid "Test Publishable Key"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:24
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:24
 msgid "Test Secret Key"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:27
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:27
 msgid "Live Publishable Key"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:30
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:30
 msgid "Live Secret Key"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:36, ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:170
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:36, ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:180
 msgid "Stripe"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:89
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:89
 msgid "Stripe Customer ID"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:97
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:97
 msgid "Stripe Card ID"
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:120
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:120
 msgid "The provided Stripe Customer ID is not valid."
 msgstr ""
 
-#: includes/admin/functions-admin-pages.php:128
+#: ../pms-add-on-stripe/includes/admin/functions-admin-pages.php:128
 msgid "The provided Stripe Card ID is not valid."
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:28
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:28
 msgid "Card Number *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:37
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:37
 msgid "Card CVV *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:46
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:46
 msgid "Expiration Date *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:88
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:88
 msgid "Billing First Name *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:97
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:97
 msgid "Billing Last Name *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:106
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:106
 msgid "Billing Address *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:115
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:115
 msgid "Billing City *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:124
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:124
 msgid "Billing Zip / Postal Code *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:133
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:133
 msgid "Billing Country *"
 msgstr ""
 
-#: includes/views/view-billing-cc-form.php:154
+#: ../pms-add-on-stripe/includes/views/view-billing-cc-form.php:154
 msgid "Billing State / Province *"
 msgstr ""
 
@@ -3786,59 +3846,75 @@ msgstr ""
 msgid "Dynamically display menu items based on logged-in status as well as selected subscription plans."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:149
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:148
+msgid "bbPress"
+msgstr ""
+
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:150
+msgid "Integrate Paid Member Subscriptions with the popular forums plugin, bbPress."
+msgstr ""
+
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:153
+msgid "Fixed Period Membership"
+msgstr ""
+
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:159
 msgid "Get Basic Add-ons"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:155
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:165
 msgid "Pro Add-ons"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:156
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:166
 msgid "These addons extend your WordPress Membership Plugin and are available with the <a href=\"%s\">PRO version</a> only."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:160
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:170
 msgid "Recurring Payments - PayPal Standard"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:162
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:172
 msgid "Accept recurring payments from your members through PayPal Standard."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:165
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:175
 msgid "PayPal Pro and PayPal Express"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:167
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:177
 msgid "Accept one time or recurring payments through PayPal Pro (credit card) and/or Express Checkout."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:172
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:182
 msgid "Accept credit card payments, both one-time and recurring, directly on your website via Stripe."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:175
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:185
 msgid "Content Dripping"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:177
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:187
 msgid "Create schedules for your content, making posts or categories available for your members only after a certain time has passed since they signed up for a subscription plan."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:180
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:190
 msgid "Multiple Subscriptions / User"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:182
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:192
 msgid "Setup multiple subscription level blocks and allow members to sign up for more than one subscription plan (one per block)."
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:186
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:197
+msgid "This add-on allows you and your members to download PDF invoices for each payment that has been completed."
+msgstr ""
+
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:201
 msgid "Get Pro Add-ons"
 msgstr ""
 
-#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:205
+#: ../paid-member-subscriptions/includes/admin/views/view-page-basic-info.php:220
 msgid "Paid Member Subscriptions comes with an <a href=\"%s\">extensive documentation</a> to assist you."
 msgstr ""
 

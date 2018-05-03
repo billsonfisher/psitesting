@@ -264,3 +264,10 @@ textarea {
 		margin-bottom: 0em !important;
 	}
 }
+.catch-ajax-response th{
+	width: 100px !important;
+	
+}
+a.button-secondary.wpProQuiz_update {
+    display: none;
+}

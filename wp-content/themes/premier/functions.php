@@ -506,3 +506,4 @@ function premier_custom_shop_archive_title( $title ) {
     return $title;
 }
 add_filter( 'wp_title', 'premier_custom_shop_archive_title' );
+

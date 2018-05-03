@@ -125,7 +125,7 @@ if ( class_exists('PMS_Meta_Box') ){
              if ( PMS_Discount_Codes_Meta_Box::is_unique_code( $discount_code ) )
                  update_post_meta($post_id, 'pms_discount_code', $discount_code );
              else
-                 $validation_errors[] = __('The promotion code you entered already exists. Please choose a different code.', 'pms-add-on-discount-codes');
+                 $validation_errors[] = __('The promotion code you entered already exists. Please choose a different code.', 'paid-member-subscriptions');
          }
 
          // Update discount type
@@ -146,7 +146,7 @@ if ( class_exists('PMS_Meta_Box') ){
              if( is_numeric( $discount_amount ) && ( intval($discount_amount) >= 0 ) )
                  update_post_meta( $post_id, 'pms_discount_amount', $discount_amount );
              else
-                 $validation_errors[] = __('Amount needs to be a positive number.','pms-add-on-discount-codes');
+                 $validation_errors[] = __('Amount needs to be a positive number.','paid-member-subscriptions');
          }
 
 
@@ -166,7 +166,7 @@ if ( class_exists('PMS_Meta_Box') ){
              if( is_numeric($max_uses) && (intval($max_uses) >= 0) && ($max_uses == round($max_uses)) )
                  update_post_meta( $post_id, 'pms_discount_max_uses', $_POST['pms_discount_max_uses'] );
              else
-                 $validation_errors[] = __('Maximum uses needs to be a positive integer.','pms-add-on-discount-codes');
+                 $validation_errors[] = __('Maximum uses needs to be a positive integer.','paid-member-subscriptions');
          }
 
 
@@ -179,7 +179,7 @@ if ( class_exists('PMS_Meta_Box') ){
              if ( PMS_Discount_Codes_Meta_Box::is_valid_date( $start_date, 'Y-m-d') )
                  update_post_meta( $post_id, 'pms_discount_start_date', $start_date );
              else
-                 $validation_errors[] = __('Please enter a valid discount start date in the format of yyyy-mm-dd.', 'pms-add-on-discount-codes');
+                 $validation_errors[] = __('Please enter a valid discount start date in the format of yyyy-mm-dd.', 'paid-member-subscriptions');
          }
 
          // Update discount expiration date
@@ -191,12 +191,12 @@ if ( class_exists('PMS_Meta_Box') ){
              if ( PMS_Discount_Codes_Meta_Box::is_valid_date( $expiration_date ,'Y-m-d') )
 
                  if ( strtotime( $expiration_date ) < time() ) // discount is expired
-                     $validation_errors[] = __('The discount code has already expired. Please enter a different expiration date.','pms-add-on-discount-codes');
+                     $validation_errors[] = __('The discount code has already expired. Please enter a different expiration date.','paid-member-subscriptions');
                  else
                     update_post_meta($post_id, 'pms_discount_expiration_date', $expiration_date );
 
              else
-                 $validation_errors[] = __('Please enter a valid discount expiration date in the format of yyyy-mm-dd.','pms-add-on-discount-codes');
+                 $validation_errors[] = __('Please enter a valid discount expiration date in the format of yyyy-mm-dd.','paid-member-subscriptions');
          }
 
 
@@ -262,7 +262,7 @@ if ( class_exists('PMS_Meta_Box') ){
 
     } // end class PMS_Discount_Codes_Meta_Box
 
-    $pms_meta_box_discount_code_details = new PMS_Discount_Codes_Meta_Box( 'pms_discount_codes', __( 'Discount Code Details', 'pms-add-on-discount-codes' ), 'pms-discount-codes', 'normal' );
+    $pms_meta_box_discount_code_details = new PMS_Discount_Codes_Meta_Box( 'pms_discount_codes', __( 'Discount Code Details', 'paid-member-subscriptions' ), 'pms-discount-codes', 'normal' );
     $pms_meta_box_discount_code_details->init();
 
 } // end class_exists

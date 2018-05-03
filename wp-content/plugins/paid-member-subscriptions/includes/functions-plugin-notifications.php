@@ -91,15 +91,20 @@ function pms_add_plugin_notification( $notification_id = '', $notification_messa
  */
 function pms_add_plugin_notification_new_add_on_invoices() {
 
-	if( 1 === version_compare( PMS_VERSION, '1.6.8' ) )
-		return;
-
-	$notification_id = 'pms_new_add_on_invoices';
+	/*$notification_id = 'pms_new_add_on_invoices';
 	
 	$message  = '<img style="float: left; margin: 10px 12px 10px 0; max-width: 80px;" src="' . PMS_PLUGIN_DIR_URL . 'assets/images/pms-add-on-invoices-logo.png" />';
 	$message .= '<p style="margin-top: 16px;">' . __( 'Automatically generate PDF invoices for each subscription payment using the new <strong>Invoices</strong> add-on.', 'paid-member-subscriptions' ) . '</p>';
 	$message .= '<p><a href="' . add_query_arg( array( 'page' => 'pms-addons-page', 'pms_dismiss_admin_notification' => $notification_id ), admin_url( 'admin.php' ) ) . '#pms-addons-title" class="button-primary">' . __( 'Check it out!', 'paid-member-subscriptions' ) . '</a></p>';
 	$message .= '<a href="' . add_query_arg( array( 'pms_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'paid-member-subscriptions' ) . '</span></a>'; 
+
+	pms_add_plugin_notification( $notification_id, $message, 'pms-notice pms-narrow notice notice-info', true, array( 'pms-addons-page' ) );*/
+
+	$notification_id = 'pms_new_add_on_fixedp';
+	$message  = '<img style="float: left; margin: 10px 12px 10px 0; max-width: 80px;" src="' . PMS_PLUGIN_DIR_URL . 'assets/images/pms-add-on-fixedp-logo.png" />';
+	$message .= '<p style="margin-top: 16px;">' . __( 'The Fixed Period Membership Add-On allows your Subscriptions to end at a specific date.', 'paid-member-subscriptions' ) . '</p>';
+	$message .= '<p><a href="' . add_query_arg( array( 'page' => 'pms-addons-page', 'pms_dismiss_admin_notification' => $notification_id ), admin_url( 'admin.php' ) ) . '#pms-addons-title" class="button-primary">' . __( 'Check it out!', 'paid-member-subscriptions' ) . '</a></p>';
+	$message .= '<a href="' . add_query_arg( array( 'pms_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'paid-member-subscriptions' ) . '</span></a>';
 
 	pms_add_plugin_notification( $notification_id, $message, 'pms-notice pms-narrow notice notice-info', true, array( 'pms-addons-page' ) );
 

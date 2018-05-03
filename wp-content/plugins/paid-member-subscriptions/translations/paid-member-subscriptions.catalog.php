@@ -81,6 +81,7 @@
 <?php __(" is %s", "paid-member-subscriptions"); ?>
 <?php __(" every %s.", "paid-member-subscriptions"); ?>
 <?php __(", then %s %s every %s.", "paid-member-subscriptions"); ?>
+<?php __("Amount to be charged ", "paid-member-subscriptions"); ?>
 <?php __("Please select a subscription plan and try again.", "paid-member-subscriptions"); ?>
 <?php __("The discount is not valid for this subscription plan.", "paid-member-subscriptions"); ?>
 <?php __("The discount code you entered is not active yet.", "paid-member-subscriptions"); ?>
@@ -501,7 +502,7 @@
 <?php __("Subscription Recurring Payment", "paid-member-subscriptions"); ?>
 <?php __("Subscription Renewal Payment", "paid-member-subscriptions"); ?>
 <?php __("Subscription Upgrade Payment", "paid-member-subscriptions"); ?>
-<?php __("Automatically generate PDF invoices for each subscription payment using the new <strong>Invoices</strong> add-on.", "paid-member-subscriptions"); ?>
+<?php __("The Fixed Period Membership Add-On allows your Subscriptions to end at a specific date.", "paid-member-subscriptions"); ?>
 <?php __("Check it out!", "paid-member-subscriptions"); ?>
 <?php __("Dismiss this notice.", "paid-member-subscriptions"); ?>
 <?php __("Free", "paid-member-subscriptions"); ?>
@@ -611,6 +612,20 @@
 <?php __("Download Invoice", "paid-member-subscriptions"); ?>
 <?php __(" until %s", "paid-member-subscriptions"); ?>
 <?php __("Add New Subscription", "paid-member-subscriptions"); ?>
+<?php __("Pay What You Want", "paid-member-subscriptions"); ?>
+<?php __("Enable Pay What You Want Pricing?", "paid-member-subscriptions"); ?>
+<?php __("Enabling this will allow users to set their own price when purchasing this subscription. This will override the subscription price set above, which will be used as the recommended price.", "paid-member-subscriptions"); ?>
+<?php __("Minimum price:", "paid-member-subscriptions"); ?>
+<?php __("Enter the minimum price allowed for this subscription plan. Leaving it empty will set the minimum price equal to the subscription price.", "paid-member-subscriptions"); ?>
+<?php __("Maximum price:", "paid-member-subscriptions"); ?>
+<?php __("Enter the maximum price allowed for this subscription plan. Leaving it empty will imply no maximum price is set.", "paid-member-subscriptions"); ?>
+<?php __("Label:", "paid-member-subscriptions"); ?>
+<?php __("Text that will be displayed on the front-end, after the subscription plan name and before the price input.", "paid-member-subscriptions"); ?>
+<?php __("Please enter a price for the selected subscription plan.", "paid-member-subscriptions"); ?>
+<?php __("Please enter a numeric price, greater than zero.", "paid-member-subscriptions"); ?>
+<?php __("Please enter a price between %1$s and %2$s.", "paid-member-subscriptions"); ?>
+<?php __("Please enter a price greater than or equal to %s.", "paid-member-subscriptions"); ?>
+<?php __("Please enter a price less than or equal to %s.", "paid-member-subscriptions"); ?>
 <?php __("You will soon be redirected automatically. If you see this page for more than 5 seconds, please click <a href=\"%1$s\">here</a>", "paid-member-subscriptions"); ?>
 <?php __("You will soon be redirected to complete the payment.", "paid-member-subscriptions"); ?>
 <?php __("You will soon be redirected to PayPal...", "paid-member-subscriptions"); ?>
@@ -955,6 +970,9 @@
 <?php __("Create multiple automated email reminders that are sent to members before or after certain events take place (subscription expires, subscription activated etc.)", "paid-member-subscriptions"); ?>
 <?php __("Navigation Menu Filtering", "paid-member-subscriptions"); ?>
 <?php __("Dynamically display menu items based on logged-in status as well as selected subscription plans.", "paid-member-subscriptions"); ?>
+<?php __("bbPress", "paid-member-subscriptions"); ?>
+<?php __("Integrate Paid Member Subscriptions with the popular forums plugin, bbPress.", "paid-member-subscriptions"); ?>
+<?php __("Fixed Period Membership", "paid-member-subscriptions"); ?>
 <?php __("Get Basic Add-ons", "paid-member-subscriptions"); ?>
 <?php __("Pro Add-ons", "paid-member-subscriptions"); ?>
 <?php __("These addons extend your WordPress Membership Plugin and are available with the <a href=\"%s\">PRO version</a> only.", "paid-member-subscriptions"); ?>
@@ -967,6 +985,7 @@
 <?php __("Create schedules for your content, making posts or categories available for your members only after a certain time has passed since they signed up for a subscription plan.", "paid-member-subscriptions"); ?>
 <?php __("Multiple Subscriptions / User", "paid-member-subscriptions"); ?>
 <?php __("Setup multiple subscription level blocks and allow members to sign up for more than one subscription plan (one per block).", "paid-member-subscriptions"); ?>
+<?php __("This add-on allows you and your members to download PDF invoices for each payment that has been completed.", "paid-member-subscriptions"); ?>
 <?php __("Get Pro Add-ons", "paid-member-subscriptions"); ?>
 <?php __("Paid Member Subscriptions comes with an <a href=\"%s\">extensive documentation</a> to assist you.", "paid-member-subscriptions"); ?>
 <?php __("Bulk Add Subscription Plans to Users", "paid-member-subscriptions"); ?>

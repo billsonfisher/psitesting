@@ -78,28 +78,28 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
 
             // Register custom Discount Code Statuses
             register_post_status( 'active', array(
-                'label'                     => _x( 'Active', 'Active status for discount code', 'pms-add-on-discount-codes' ),
+                'label'                     => _x( 'Active', 'Active status for discount code', 'paid-member-subscriptions' ),
                 'public'                    => true,
                 'exclude_from_search'       => false,
                 'show_in_admin_all_list'    => true,
                 'show_in_admin_status_list' => true,
-                'label_count'               => _n_noop( 'Active <span class="count">(%s)</span>', 'Active <span class="count">(%s)</span>', 'pms-add-on-discount-codes' )
+                'label_count'               => _n_noop( 'Active <span class="count">(%s)</span>', 'Active <span class="count">(%s)</span>', 'paid-member-subscriptions' )
             )  );
             register_post_status( 'inactive', array(
-                'label'                     => _x( 'Inactive', 'Inactive status for discount code', 'pms-add-on-discount-codes' ),
+                'label'                     => _x( 'Inactive', 'Inactive status for discount code', 'paid-member-subscriptions' ),
                 'public'                    => true,
                 'exclude_from_search'       => false,
                 'show_in_admin_all_list'    => true,
                 'show_in_admin_status_list' => true,
-                'label_count'               => _n_noop( 'Inactive <span class="count">(%s)</span>', 'Inactive <span class="count">(%s)</span>', 'pms-add-on-discount-codes' )
+                'label_count'               => _n_noop( 'Inactive <span class="count">(%s)</span>', 'Inactive <span class="count">(%s)</span>', 'paid-member-subscriptions' )
             )  );
             register_post_status( 'expired', array(
-                'label'                     => _x( 'Expired', 'Expired status for discount code', 'pms-add-on-discount-codes' ),
+                'label'                     => _x( 'Expired', 'Expired status for discount code', 'paid-member-subscriptions' ),
                 'public'                    => true,
                 'exclude_from_search'       => false,
                 'show_in_admin_all_list'    => true,
                 'show_in_admin_status_list' => true,
-                'label_count'               => _n_noop( 'Expired <span class="count">(%s)</span>', 'Expired <span class="count">(%s)</span>', 'pms-add-on-discount-codes' )
+                'label_count'               => _n_noop( 'Expired <span class="count">(%s)</span>', 'Expired <span class="count">(%s)</span>', 'paid-member-subscriptions' )
             )  );
 
         }
@@ -112,12 +112,12 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
 
             // Add new columns for the discount codes
             $new_columns = array_merge($columns, array(
-                'code'            => __('Code', 'pms-add-on-discount-codes'),
-                'amount'          => __('Amount', 'pms-add-on-discount-codes'),
-                'uses'            => __('Uses', 'pms-add-on-discount-codes'),
-                'start-date'      => __('Start Date', 'pms-add-on-discount-codes'),
-                'expiration-date' => __('Expiration Date', 'pms-add-on-discount-codes'),
-                'status'          => __('Status', 'pms-add-on-discount-codes')
+                'code'            => __('Code', 'paid-member-subscriptions'),
+                'amount'          => __('Amount', 'paid-member-subscriptions'),
+                'uses'            => __('Uses', 'paid-member-subscriptions'),
+                'start-date'      => __('Start Date', 'paid-member-subscriptions'),
+                'expiration-date' => __('Expiration Date', 'paid-member-subscriptions'),
+                'status'          => __('Status', 'paid-member-subscriptions')
             ));
 
             unset($new_columns['date']);
@@ -166,16 +166,16 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
             $discount_code = new PMS_Discount_Code( $post );
 
             if( $discount_code->is_active() )
-                $activate_deactivate = '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'pms-action' => 'deactivate_discount_code', 'post_id' => $post->ID ) ), 'pms_discount_code_nonce' ) ) . '">' . __( 'Deactivate', 'pms-add-on-discount-codes' ) . '</a>';
+                $activate_deactivate = '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'pms-action' => 'deactivate_discount_code', 'post_id' => $post->ID ) ), 'pms_discount_code_nonce' ) ) . '">' . __( 'Deactivate', 'paid-member-subscriptions' ) . '</a>';
             else
-                $activate_deactivate = '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'pms-action' => 'activate_discount_code', 'post_id' => $post->ID ) ), 'pms_discount_code_nonce' ) ) . '">' . __( 'Activate', 'pms-add-on-discount-codes' ) . '</a>';
+                $activate_deactivate = '<a href="' . esc_url( wp_nonce_url( add_query_arg( array( 'pms-action' => 'activate_discount_code', 'post_id' => $post->ID ) ), 'pms_discount_code_nonce' ) ) . '">' . __( 'Activate', 'paid-member-subscriptions' ) . '</a>';
 
             $actions['change_status'] = $activate_deactivate;
 
             /*
              * Add the option to delete a discount code
              */
-            $delete = '<span class="trash"><a onclick="return confirm( \'' . __("Are you sure you want to delete this Discount Code?", "pms-add-on-discount-codes") . ' \' )" href="' . esc_url(wp_nonce_url(add_query_arg(array('pms-action' => 'delete_discount_code', 'post_id' => $post->ID, 'deleted' => 1)), 'pms_discount_code_nonce')) . '">' . __('Delete', 'pms-add-on-discount-codes') . '</a></span>';
+            $delete = '<span class="trash"><a onclick="return confirm( \'' . __("Are you sure you want to delete this Discount Code?", "pms-add-on-discount-codes") . ' \' )" href="' . esc_url(wp_nonce_url(add_query_arg(array('pms-action' => 'delete_discount_code', 'post_id' => $post->ID, 'deleted' => 1)), 'pms_discount_code_nonce')) . '">' . __('Delete', 'paid-member-subscriptions') . '</a></span>';
 
             $actions['delete'] = $delete;
 
@@ -221,13 +221,13 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
             // Information shown in discount "Start date" column
             if ($column == 'start-date') {
                 if ( !empty($discount_code->start_date) ) echo $discount_code->start_date;
-                    else echo __( 'No start date', 'pms-add-on-discount-codes' );
+                    else echo __( 'No start date', 'paid-member-subscriptions' );
             }
 
             // Information shown in discount "Start date" column
             if ($column == 'expiration-date') {
                 if ( !empty($discount_code->expiration_date) ) echo $discount_code->expiration_date;
-                else echo __( 'No expiration date', 'pms-add-on-discount-codes' );
+                else echo __( 'No expiration date', 'paid-member-subscriptions' );
             }
 
             // Information shown in the status column
@@ -236,11 +236,11 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
                 $discount_code_status_dot = apply_filters( 'pms-list-table-show-status-dot', '<span class="pms-status-dot ' . $discount_code->status . '"></span>' );
 
                 if( $discount_code->is_active() )
-                    echo $discount_code_status_dot . '<span>' . __( 'Active', 'pms-add-on-discount-codes' ) . '</span>';
+                    echo $discount_code_status_dot . '<span>' . __( 'Active', 'paid-member-subscriptions' ) . '</span>';
                 elseif ( $discount_code->is_expired() )
-                    echo $discount_code_status_dot . '<span>' . __( 'Expired', 'pms-add-on-discount-codes' ) . '</span>';
+                    echo $discount_code_status_dot . '<span>' . __( 'Expired', 'paid-member-subscriptions' ) . '</span>';
                     else
-                        echo $discount_code_status_dot . '<span>' . __( 'Inactive', 'pms-add-on-discount-codes' ) . '</span>';
+                        echo $discount_code_status_dot . '<span>' . __( 'Inactive', 'paid-member-subscriptions' ) . '</span>';
             }
 
         }
@@ -271,7 +271,7 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
                 return false;
 
             echo '<div id="pms-delete-action">';
-            echo '<a class="submitdelete deletion" onclick="return confirm( \'' . __("Are you sure you want to delete this Discount Code?", "pms-add-on-discount-codes") . ' \' )" href="' . esc_url(wp_nonce_url(add_query_arg(array('pms-action' => 'delete_discount_code', 'post_id' => $post->ID, 'deleted' => 1), admin_url('edit.php?post_type=' . $this->post_type)), 'pms_discount_code_nonce')) . '">' . __('Delete Discount', 'pms-add-on-discount-codes') . '</a>';
+            echo '<a class="submitdelete deletion" onclick="return confirm( \'' . __("Are you sure you want to delete this Discount Code?", "pms-add-on-discount-codes") . ' \' )" href="' . esc_url(wp_nonce_url(add_query_arg(array('pms-action' => 'delete_discount_code', 'post_id' => $post->ID, 'deleted' => 1), admin_url('edit.php?post_type=' . $this->post_type)), 'pms_discount_code_nonce')) . '">' . __('Delete Discount', 'paid-member-subscriptions') . '</a>';
             echo '</div>';
 
         }
@@ -285,7 +285,7 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
             global $post_type;
 
             if ($post_type == $this->post_type) {
-                return __('Enter Discount Code name here', 'pms-add-on-discount-codes');
+                return __('Enter Discount Code name here', 'paid-member-subscriptions');
             }
 
             return $input;
@@ -302,16 +302,16 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
 
             $messages['pms-discount-codes'] = array(
                 0 => '',
-                1 => __('Discount Code updated.', 'pms-add-on-discount-codes'),
-                2 => __('Custom field updated.', 'pms-add-on-discount-codes'),
-                3 => __('Custom field deleted.', 'pms-add-on-discount-codes'),
-                4 => __('Discount Code updated.', 'pms-add-on-discount-codes'),
-                5 => isset($_GET['revision']) ? sprintf(__('Discount Code' . ' restored to revision from %s', 'pms-add-on-discount-codes'), wp_post_revision_title((int)$_GET['revision'], false)) : false,
-                6 => __('Discount Code saved.', 'pms-add-on-discount-codes'),
-                7 => __('Discount Code saved.', 'pms-add-on-discount-codes'),
-                8 => __('Discount Code submitted.', 'pms-add-on-discount-codes'),
-                9 => sprintf(__('Discount Code' . ' scheduled for: <strong>%1$s</strong>.', 'pms-add-on-discount-codes'), date_i18n(__('M j, Y @ G:i'), strtotime($post->post_date))),
-                10 => __('Discount Code draft updated.', 'pms-add-on-discount-codes'),
+                1 => __('Discount Code updated.', 'paid-member-subscriptions'),
+                2 => __('Custom field updated.', 'paid-member-subscriptions'),
+                3 => __('Custom field deleted.', 'paid-member-subscriptions'),
+                4 => __('Discount Code updated.', 'paid-member-subscriptions'),
+                5 => isset($_GET['revision']) ? sprintf(__('Discount Code' . ' restored to revision from %s', 'paid-member-subscriptions'), wp_post_revision_title((int)$_GET['revision'], false)) : false,
+                6 => __('Discount Code saved.', 'paid-member-subscriptions'),
+                7 => __('Discount Code saved.', 'paid-member-subscriptions'),
+                8 => __('Discount Code submitted.', 'paid-member-subscriptions'),
+                9 => sprintf(__('Discount Code' . ' scheduled for: <strong>%1$s</strong>.', 'paid-member-subscriptions'), date_i18n(__('M j, Y @ G:i'), strtotime($post->post_date))),
+                10 => __('Discount Code draft updated.', 'paid-member-subscriptions'),
             );
 
             // If there are validation errors do not display the above messages
@@ -331,11 +331,11 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
         {
 
             $bulk_messages['pms-discount-codes'] = array(
-                'updated'   => _n('%s Discount Code updated.', '%s Discount Codes updated.', $bulk_counts['updated'], 'pms-add-on-discount-codes'),
-                'locked'    => _n('%s Discount Code not updated, somebody is editing it.', '%s Discount Codes not updated, somebody is editing them.', $bulk_counts['locked'], 'pms-add-on-discount-codes'),
-                'deleted'   => _n('%s Discount Code permanently deleted.', '%s Discount Codes permanently deleted.', $bulk_counts['deleted'], 'pms-add-on-discount-codes'),
-                'trashed'   => _n('%s Discount Code moved to the Trash.', '%s Discount Codes moved to the Trash.', $bulk_counts['trashed'], 'pms-add-on-discount-codes'),
-                'untrashed' => _n('%s Discount Code restored from the Trash.', '%s Discount Codes restored from the Trash.', $bulk_counts['untrashed'], 'pms-add-on-discount-codes'),
+                'updated'   => _n('%s Discount Code updated.', '%s Discount Codes updated.', $bulk_counts['updated'], 'paid-member-subscriptions'),
+                'locked'    => _n('%s Discount Code not updated, somebody is editing it.', '%s Discount Codes not updated, somebody is editing them.', $bulk_counts['locked'], 'paid-member-subscriptions'),
+                'deleted'   => _n('%s Discount Code permanently deleted.', '%s Discount Codes permanently deleted.', $bulk_counts['deleted'], 'paid-member-subscriptions'),
+                'trashed'   => _n('%s Discount Code moved to the Trash.', '%s Discount Codes moved to the Trash.', $bulk_counts['trashed'], 'paid-member-subscriptions'),
+                'untrashed' => _n('%s Discount Code restored from the Trash.', '%s Discount Codes restored from the Trash.', $bulk_counts['untrashed'], 'paid-member-subscriptions'),
             );
 
             return $bulk_messages;
@@ -359,6 +359,6 @@ if ( class_exists('PMS_Custom_Post_Type') ) {
         'hierarchical'    => true
     );
 
-    $pms_cpt_discount_codes = new PMS_Custom_Post_Type_Discount_Codes('pms-discount-codes', __('Discount Code', 'pms-add-on-discount-codes'), __('Discount Codes', 'pms-add-on-discount-codes'), $args);
+    $pms_cpt_discount_codes = new PMS_Custom_Post_Type_Discount_Codes('pms-discount-codes', __('Discount Code', 'paid-member-subscriptions'), __('Discount Codes', 'paid-member-subscriptions'), $args);
     $pms_cpt_discount_codes->init();
 }

@@ -131,12 +131,12 @@ Class PMS_Form_Handler {
 
         // Check if we need to register the user without him selecting a subscription (becoming a member) - thins happens when "subscription_plans" param in register form is = "none"
         if ( isset( $_POST['pmstkn2'] ) && ( wp_verify_nonce( $_POST['pmstkn2'], 'pms_register_user_no_subscription_nonce' ) ) ) {
-
+            
             // Register the user
             self::register_user( self::get_request_member_data() );
 
         } else {
-
+            
             // Proceed to checkout
             self::process_checkout();
 
@@ -1344,6 +1344,7 @@ Class PMS_Form_Handler {
          * Allow extra validations before the processing of the checkout
          *
          */
+
         do_action( 'pms_process_checkout_validations' );
 
 
@@ -1353,8 +1354,7 @@ Class PMS_Form_Handler {
          */
         if ( count( pms_errors()->get_error_codes() ) > 0 )
             return;
-
-
+        
         /**
          * If we're on the register form register the user
          *
@@ -1365,6 +1365,7 @@ Class PMS_Form_Handler {
 
         }
 
+
         /**
          * Set-up some data for future use
          *
@@ -1372,10 +1373,12 @@ Class PMS_Form_Handler {
         $settings          = get_option( 'pms_settings' );
         $payments_settings = $settings['payments'];
         $subscription_plan = pms_get_subscription_plan( $user_data['subscriptions'][0] );
-
+      
         // Get payment gateway
+
         $pay_gate        = ( ! empty( $_POST['pay_gate'] ) ? sanitize_text_field( $_POST['pay_gate'] ) : '' );
         $payment_gateway = self::checkout_get_payment_gateway();
+        
 
         /**
          * If the payment gateway is null then no payment is necessary
@@ -1387,7 +1390,7 @@ Class PMS_Form_Handler {
         else
             $needs_payment = true;
 
-
+         
         // For backwards compatibility cache the subscription plan
         // in the user_data array
         $user_data['subscription'] = $subscription_plan;
@@ -1404,7 +1407,7 @@ Class PMS_Form_Handler {
             'form_location' => $form_location
         );
 
-
+       
         /**
          * Subscription data
          *
@@ -1531,11 +1534,13 @@ Class PMS_Form_Handler {
         } else {
 
             if( ! is_null( $payment_gateway ) && $payment_gateway->supports( 'subscription_sign_up_fee' ) && in_array( $form_location, array( 'register', 'new_subscription', 'register_email_confirmation' ) ) )
-                $amount = $subscription_plan->price + $subscription_plan->sign_up_fee;
+                /* Since version 1.7.1 $amount is given the $subscription_data['billing_amount'] value (instead of $subscription_plan->price), because $subscription_data['billing_amount'] is filterable and will propagate the price changes to $payment_data*/
+                $amount = array_key_exists('billing_amount', $subscription_data) ? ( $subscription_data['billing_amount'] + $subscription_plan->sign_up_fee ) : ( $subscription_plan->price + $subscription_plan->sign_up_fee );
             else
-                $amount = $subscription_plan->price;
+                $amount = array_key_exists('billing_amount', $subscription_data) ? $subscription_data['billing_amount'] : $subscription_plan->price ;
 
         }
+
 
         /**
          * With the payment response we will activate the member's subscription data
@@ -1633,8 +1638,8 @@ Class PMS_Form_Handler {
              * @param array $payment_gateway_data
              *
              */
-            do_action( 'pms_register_payment', $payment_gateway_data );
 
+            do_action( 'pms_register_payment', $payment_gateway_data );
 
             if( ! empty( $payment_gateway_data['amount'] ) || ! empty( $payment_gateway_data['sign_up_amount'] ) || ( empty( $payment_gateway_data['amount'] ) && $has_trial ) ) {
 
@@ -1747,6 +1752,7 @@ Class PMS_Form_Handler {
          */
         } else {
 
+
             if( isset( $_POST['pmstkn'] ) ) {
                 $redirect_url = add_query_arg( array( 'pms_payment_error' => '1', 'pms_is_register' => ( in_array( $form_location, array( 'register', 'register_email_confirmation' ) ) ) ? '1' : '0' ), pms_get_current_page_url( true ) );
                 
@@ -1768,7 +1774,8 @@ Class PMS_Form_Handler {
 
             else
                 $success_redirect_link = add_query_arg( array( 'pmsscscd' => base64_encode( 'subscription_plans' ), 'pms_gateway_payment_action' => base64_encode( $form_location ) ), self::get_redirect_url() );
-
+           // echo $success_redirect_link;
+            //die();
             wp_redirect( $success_redirect_link );
             exit;
 

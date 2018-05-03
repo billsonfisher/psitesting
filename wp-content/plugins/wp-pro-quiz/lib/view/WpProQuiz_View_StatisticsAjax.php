@@ -60,6 +60,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                     /* @var $model WpProQuiz_Model_StatisticHistory */ ?>
                     <tr>
                         <th>
+
                             <a href="#" class="user_statistic"
                                data-ref_id="<?php echo $model->getStatisticRefId(); ?>"><?php echo $model->getUserName(); ?></a>
 
@@ -211,7 +212,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
             <tbody>
             <?php
             $gCorrect = $gIncorrect = $gHintCount = $gPoints = $gGPoints = $gTime = $gSolvedCount = 0;
-
+            
             foreach ($this->userStatistic as $cat) {
                 $cCorrect = $cIncorrect = $cHintCount = $cPoints = $cGPoints = $cTime = $cSolvedCount = 0;
                 ?>
@@ -221,6 +222,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
                         <span style="font-weight: bold;"><?php echo esc_html($cat['categoryName']); ?></span>
                     </th>
                 </tr>
+                
                 <?php foreach ($cat['questions'] as $q) {
                     $index = 1;
                     $sum = $q['correct'] + $q['incorrect'];
@@ -258,8 +260,23 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
 
                         <tr style="display: none;">
                             <th colspan="9">
+                                <?php
+
+                                    if(isset($q['questionid'])){
+                                          $questionmaper = new WpProQuiz_Model_QuestionMapper();
+                                          $question = $questionmaper->fetch($q['questionid']);
+                                          echo $question->getQuestion();
+                                    }
+                                   
+                                 ?>
                                 <?php $this->showUserAnswer($q['questionAnswerData'], $q['statistcAnswerData'],
                                     $q['answerType']); ?>
+                                <?php 
+                                  if(isset($q['questionid'])){
+                                    echo $question->getCorrectMsg(); 
+                                 }
+                                ?>
+                                
                             </th>
                         </tr>
 
@@ -305,6 +322,7 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
             <?php
             $sum = $gCorrect + $gIncorrect;
             $result = round((100 * $gPoints / $gGPoints), 2) . '%';
+            $this->grandresult = $result;
             ?>
             <tfoot>
             <tr id="wpProQuiz_tr_0">
@@ -338,6 +356,10 @@ class WpProQuiz_View_StatisticsAjax extends WpProQuiz_View_View
         </div>
         <?php
     }
+
+ 
+
+
 
     private function showUserAnswer($qAnswerData, $sAnswerData, $anserType)
     {

@@ -3,7 +3,7 @@
  * Plugin Name: Paid Member Subscriptions - Discount Codes Add-on
  * Plugin URI: http://www.cozmoslabs.com/wordpress-paid-member-subscriptions/
  * Description: Easily create discount codes for Paid Member Subscriptions plugin.
- * Version: 1.2.3
+ * Version: 1.2.4
  * Author: Cozmoslabs, Adrian Spiac
  * Author URI: http://www.cozmoslabs.com/
  * Text Domain: pms-add-on-discount-codes
@@ -153,9 +153,9 @@ function pms_dc_output_discount_box( $output, $include, $exclude_id_group, $memb
     // Return the discount code field only if we have paid plans
     if( $total_price !== 0 ) {
         $discount_output  = '<div id="pms-subscription-plans-discount">';
-        $discount_output .= '<label for="pms_subscription_plans_discount">' . apply_filters('pms_form_label_discount_code', __('Discount Code: ', 'pms-add-on-discount-codes')) . '</label>';
-        $discount_output .= '<input id="pms_subscription_plans_discount_code" name="discount_code" placeholder="' . apply_filters( 'pms_form_input_placeholder_discount_code', __( 'Enter discount', 'pms-add-on-discount-codes' ) ) . '" type="text" value="' . ( !empty( $_POST['discount_code'] ) ? esc_attr( $_POST['discount_code'] ) : '' ) . '" />';
-        $discount_output .= '<input id="pms-apply-discount" class="pms-submit button" type="submit" value="' . apply_filters( 'pms_form_submit_discount_code', __( 'Apply', 'pms-add-on-discount-codes' ) ) . '">';
+        $discount_output .= '<label for="pms_subscription_plans_discount">' . apply_filters('pms_form_label_discount_code', __('Discount Code: ', 'paid-member-subscriptions')) . '</label>';
+        $discount_output .= '<input id="pms_subscription_plans_discount_code" name="discount_code" placeholder="' . apply_filters( 'pms_form_input_placeholder_discount_code', __( 'Enter discount', 'paid-member-subscriptions' ) ) . '" type="text" value="' . ( !empty( $_POST['discount_code'] ) ? esc_attr( $_POST['discount_code'] ) : '' ) . '" />';
+        $discount_output .= '<input id="pms-apply-discount" class="pms-submit button" type="submit" value="' . apply_filters( 'pms_form_submit_discount_code', __( 'Apply', 'paid-member-subscriptions' ) ) . '">';
         $discount_output .= '</span>';
         $discount_output .= '</div>';
 
@@ -165,7 +165,7 @@ function pms_dc_output_discount_box( $output, $include, $exclude_id_group, $memb
             $message_output .= '</div>';
 
             $message_output .= '<div id="pms-subscription-plans-discount-messages-loading">';
-            $message_output .= __( 'Applying discount code. Please wait...', 'pms-add-on-discount-codes' );
+            $message_output .= __( 'Applying discount code. Please wait...', 'paid-member-subscriptions' );
             $message_output .= '</div>';
         $message_output .= '</div>';
 
@@ -233,7 +233,7 @@ add_action( 'wp_ajax_nopriv_pms_discount_code', 'pms_dc_output_apply_discount_me
  */
 function pms_dc_apply_discount_success_message( $code, $subscription, $user_checked_auto_renew ) {
 
-    $response = __('Discount successfully applied! ', 'pms-add-on-discount-codes');
+    $response = __('Discount successfully applied! ', 'paid-member-subscriptions');
 
     if ( !empty( $code ) && !empty( $subscription ) ) {
 
@@ -288,16 +288,16 @@ function pms_dc_apply_discount_success_message( $code, $subscription, $user_chec
 
             switch ($subscription_plan->duration_unit) {
                 case 'day':
-                    $duration = sprintf( _n( 'day', '%s days', $subscription_plan->duration, 'pms-add-on-discount-codes' ), $subscription_plan->duration );
+                    $duration = sprintf( _n( 'day', '%s days', $subscription_plan->duration, 'paid-member-subscriptions' ), $subscription_plan->duration );
                     break;
                 case 'week':
-                    $duration = sprintf( _n( 'week', '%s weeks', $subscription_plan->duration, 'pms-add-on-discount-codes' ), $subscription_plan->duration );
+                    $duration = sprintf( _n( 'week', '%s weeks', $subscription_plan->duration, 'paid-member-subscriptions' ), $subscription_plan->duration );
                     break;
                 case 'month':
-                    $duration = sprintf( _n( 'month', '%s months', $subscription_plan->duration, 'pms-add-on-discount-codes' ), $subscription_plan->duration );
+                    $duration = sprintf( _n( 'month', '%s months', $subscription_plan->duration, 'paid-member-subscriptions' ), $subscription_plan->duration );
                     break;
                 case 'year':
-                    $duration = sprintf( _n( 'year', '%s years', $subscription_plan->duration, 'pms-add-on-discount-codes' ), $subscription_plan->duration );
+                    $duration = sprintf( _n( 'year', '%s years', $subscription_plan->duration, 'paid-member-subscriptions' ), $subscription_plan->duration );
                     break;
             }
         }
@@ -308,16 +308,16 @@ function pms_dc_apply_discount_success_message( $code, $subscription, $user_chec
 
             switch ($subscription_plan->trial_duration_unit) {
                 case 'day':
-                    $trial_duration = sprintf( _n( '%s day', '%s days', $subscription_plan->trial_duration, 'pms-add-on-discount-codes' ), $subscription_plan->trial_duration );
+                    $trial_duration = sprintf( _n( '%s day', '%s days', $subscription_plan->trial_duration, 'paid-member-subscriptions' ), $subscription_plan->trial_duration );
                     break;
                 case 'week':
-                    $trial_duration = sprintf( _n( '%s week', '%s weeks', $subscription_plan->trial_duration, 'pms-add-on-discount-codes' ), $subscription_plan->trial_duration );
+                    $trial_duration = sprintf( _n( '%s week', '%s weeks', $subscription_plan->trial_duration, 'paid-member-subscriptions' ), $subscription_plan->trial_duration );
                     break;
                 case 'month':
-                    $trial_duration = sprintf( _n( '%s month', '%s months', $subscription_plan->trial_duration, 'pms-add-on-discount-codes' ), $subscription_plan->trial_duration );
+                    $trial_duration = sprintf( _n( '%s month', '%s months', $subscription_plan->trial_duration, 'paid-member-subscriptions' ), $subscription_plan->trial_duration );
                     break;
                 case 'year':
-                    $trial_duration = sprintf( _n( '%s year', '%s years', $subscription_plan->trial_duration, 'pms-add-on-discount-codes' ), $subscription_plan->trial_duration );
+                    $trial_duration = sprintf( _n( '%s year', '%s years', $subscription_plan->trial_duration, 'paid-member-subscriptions' ), $subscription_plan->trial_duration );
                     break;
             }
         }
@@ -326,7 +326,7 @@ function pms_dc_apply_discount_success_message( $code, $subscription, $user_chec
         // Handle Free Trial
         $response_trial = '';
         if ( !empty($subscription_plan->trial_duration) ){
-            $response_trial = sprintf(__(' after %s ' , 'pms-add-on-discount-codes'), $trial_duration);
+            $response_trial = sprintf(__(' after %s ' , 'paid-member-subscriptions'), $trial_duration);
         }
 
 
@@ -334,29 +334,29 @@ function pms_dc_apply_discount_success_message( $code, $subscription, $user_chec
         // Set currency position according to the PMS Settings page
         $initial_payment_price = ( function_exists('pms_format_price') && function_exists('pms_get_active_currency') ) ? pms_format_price($initial_payment, pms_get_active_currency()) : $initial_payment . $currency_symbol;
 
-        $response_initial_payment = sprintf( __(' is %s', 'pms-add-on-discount-codes'), $initial_payment_price );
+        $response_initial_payment = sprintf( __(' is %s', 'paid-member-subscriptions'), $initial_payment_price );
         $response_recurring_payment = '.';
 
         // Handle recurring response
         if ( ($is_recurring) && ($recurring_payment != 0) ) {
 
             if ( $initial_payment == $recurring_payment ) {
-                $response_recurring_payment = sprintf(__(' every %s.', 'pms-add-on-discount-codes'), $duration);
+                $response_recurring_payment = sprintf(__(' every %s.', 'paid-member-subscriptions'), $duration);
             }
             else {
 
                 // Set currency position according to the PMS Settings page
                 $recurring_payment_price = ( function_exists('pms_format_price') && function_exists('pms_get_active_currency') ) ? pms_format_price($recurring_payment, pms_get_active_currency()) : $recurring_payment_price = $recurring_payment . $currency_symbol;;
-                $response_recurring_payment = sprintf(__(', then %s %s every %s.', 'pms-add-on-discount-codes'), $response_trial, $recurring_payment_price, $duration);
+                $response_recurring_payment = sprintf(__(', then %s %s every %s.', 'paid-member-subscriptions'), $response_trial, $recurring_payment_price, $duration);
             }
 
         }
 
         // Final response
         if ( ($is_recurring) && ($initial_payment == $recurring_payment) )
-            $response .= __('Amount to be charged ') . $response_trial . $response_initial_payment . $response_recurring_payment;
+            $response .= __('Amount to be charged ', 'paid-member-subscriptions') . $response_trial . $response_initial_payment . $response_recurring_payment;
         else
-            $response .= __('Amount to be charged ') . $response_initial_payment . $response_recurring_payment;
+            $response .= __('Amount to be charged ', 'paid-member-subscriptions') . $response_initial_payment . $response_recurring_payment;
 
     }
 
@@ -496,26 +496,26 @@ function pms_dc_get_discount_error( $code, $subscription){
                 $discount_subscriptions = explode( ',' , $discount_meta['pms_discount_subscriptions'][0] );
 
             if ( empty($subscription) )
-                return __('Please select a subscription plan and try again.', 'pms-add-on-discount-codes');
+                return __('Please select a subscription plan and try again.', 'paid-member-subscriptions');
 
             if ( !in_array( $subscription, $discount_subscriptions) ) {
                 //discount not valid for this subscription
-                return __('The discount is not valid for this subscription plan.', 'pms-add-on-discount-codes');
+                return __('The discount is not valid for this subscription plan.', 'paid-member-subscriptions');
             }
 
             if ( !empty($discount_meta['pms_discount_start_date'][0]) && (strtotime($discount_meta['pms_discount_start_date'][0]) > time()) ) {
                 //start date is in the future
-                return __('The discount code you entered is not active yet.', 'pms-add-on-discount-codes');
+                return __('The discount code you entered is not active yet.', 'paid-member-subscriptions');
             }
 
             if ( !empty($discount_meta['pms_discount_expiration_date'][0]) && (strtotime($discount_meta['pms_discount_expiration_date'][0]) <= time()) ) {
                 //expiration date has passed
-                return __('The discount code you entered has expired.', 'pms-add-on-discount-codes');
+                return __('The discount code you entered has expired.', 'paid-member-subscriptions');
             }
 
             if ( !empty($discount_meta['pms_discount_max_uses'][0]) && isset($discount_meta['pms_discount_uses'][0]) && ( $discount_meta['pms_discount_max_uses'][0] <= $discount_meta['pms_discount_uses'][0]) ) {
                 //all uses for this discount have been consumed
-                return __('The discount code maximum uses have been reached.', 'pms-add-on-discount-codes');
+                return __('The discount code maximum uses have been reached.', 'paid-member-subscriptions');
             }
 
             /**
@@ -531,7 +531,7 @@ function pms_dc_get_discount_error( $code, $subscription){
         }
         else {
             // Entered discount code was not found or is inactive
-            return __('The discount code you entered is invalid.', 'pms-add-on-discount-codes');
+            return __('The discount code you entered is invalid.', 'paid-member-subscriptions');
             }
     }
     return '';
@@ -788,12 +788,3 @@ if( class_exists( 'pms_PluginUpdateChecker' ) ) {
     $localSerial = get_option( $slug . '_serial_number');
     $pms_nmf_update = new pms_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber=' . $localSerial . '&uniqueproduct=CLPMSDC', __FILE__, $slug );
 }
-
-function pms_dc_init_translation() {
-    $current_theme = wp_get_theme();
-    if( !empty( $current_theme->stylesheet ) && file_exists( get_theme_root().'/'. $current_theme->stylesheet .'/local_pms_lang' ) )
-        load_plugin_textdomain( 'pms-add-on-discount-codes', false, basename( dirname( __FILE__ ) ).'/../../themes/'.$current_theme->stylesheet.'/local_pb_lang' );
-    else
-        load_plugin_textdomain( 'pms-add-on-discount-codes', false, basename(dirname(__FILE__)) . '/translation/' );
-}
-add_action( 'init', 'pms_dc_init_translation', 8 );

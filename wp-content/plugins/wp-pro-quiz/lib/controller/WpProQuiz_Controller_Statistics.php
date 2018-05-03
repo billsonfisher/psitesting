@@ -319,12 +319,14 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
         $avg = (bool)$data['avg'];
         $refIdUserId = $avg ? $userId : $refId;
 
+
+
         $statisticRefMapper = new WpProQuiz_Model_StatisticRefMapper();
         $statisticUserMapper = new WpProQuiz_Model_StatisticUserMapper();
         $formMapper = new WpProQuiz_Model_FormMapper();
-
+        
         $statisticUsers = $statisticUserMapper->fetchUserStatistic($refIdUserId, $quizId, $avg);
-
+        
         $output = array();
 
         foreach ($statisticUsers as $statistic) {
@@ -378,11 +380,21 @@ class WpProQuiz_Controller_Statistics extends WpProQuiz_Controller_Controller
         }
 
         $view->userStatistic = $output;
-
+        
         $html = $view->getUserTable();
+        $result = $view->grandresult;
+
 
         return json_encode(array(
-            'html' => $html
+            'html' => $html,
+            'userid'=>$userId,
+            'quizid'=>$quizId,
+            'refId'=>$refId,
+            'avg'=>$avg,
+            'totalresult'=>$result,
+            'refIdUserId'=>$refIdUserId
+
+
         ));
     }
 

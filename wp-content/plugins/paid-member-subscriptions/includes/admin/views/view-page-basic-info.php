@@ -144,6 +144,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             <img src="<?php echo PMS_PLUGIN_DIR_URL; ?>assets/images/add-on-navigation-menu-filtering.png" alt="Navigation Menu Filtering" class="pms-addon-image" />
             <p><?php _e( 'Dynamically display menu items based on logged-in status as well as selected subscription plans.', 'paid-member-subscriptions' ); ?></p>
         </div>
+        <div style="clear:left;">
+            <h4 class="pms-add-on-name"><?php _e( 'bbPress', 'paid-member-subscriptions' ); ?></h4>
+            <img src="<?php echo PMS_PLUGIN_DIR_URL; ?>assets/images/pms-addon-bbpress.png" alt="bbPress" class="pms-addon-image" />
+            <p><?php _e( 'Integrate Paid Member Subscriptions with the popular forums plugin, bbPress.', 'paid-member-subscriptions' ); ?></p>
+        </div>
+        <div>
+            <h4 class="pms-add-on-name"><?php _e( 'Fixed Period Membership', 'paid-member-subscriptions' ); ?></h4>
+            <img src="<?php echo PMS_PLUGIN_DIR_URL; ?>assets/images/add-on-fixed-period.png" alt="Fixed Period Membership" class="pms-addon-image" />
+            <p><?php _e( 'The Fixed Period Membership Add-On allows your Subscriptions to end at a specific date.', 'paid-member-subscriptions' ); ?></p>
+        </div>
     </div>
     <div class="pms-row">
         <p><a href="https://www.cozmoslabs.com/wordpress-paid-member-subscriptions/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-addons-basic-btn&utm_campaign=PMSFree" class="button-primary pms-cta"><?php _e( 'Get Basic Add-ons', 'paid-member-subscriptions' ); ?></a></p>
@@ -180,6 +190,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
             <h4 class="pms-add-on-name"><?php _e( 'Multiple Subscriptions / User', 'paid-member-subscriptions' ); ?></h4>
             <img src="<?php echo PMS_PLUGIN_DIR_URL; ?>assets/images/add-on-multiple-subscriptions.png" alt="Multiple Subscriptions per User" class="pms-addon-image" />
             <p><?php _e( 'Setup multiple subscription level blocks and allow members to sign up for more than one subscription plan (one per block).', 'paid-member-subscriptions' ); ?></p>
+        </div>
+        <div>
+            <h4 class="pms-add-on-name"><?php _e( 'Invoices', 'paid-member-subscriptions' ); ?></h4>
+            <img src="<?php echo PMS_PLUGIN_DIR_URL; ?>assets/images/add-on-invoices.png" alt="Invoices" class="pms-addon-image" />
+            <p><?php _e( 'This add-on allows you and your members to download PDF invoices for each payment that has been completed.', 'paid-member-subscriptions' ); ?></p>
         </div>
     </div>
     <div class="pms-row">
