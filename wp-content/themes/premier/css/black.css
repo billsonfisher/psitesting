@@ -1,0 +1,104 @@
+/**
+ * @package premier
+ * @since premier 1.0
+ *
+ */
+ 
+a.more-link {
+	background-color: #222;
+}
+.main-navigation li.current_page_item,  #main-navigation li.current-menu-parent{background: #222;}
+.main-navigation li.current_page_item:hover a,#main-navigation li.current_page_item:hover{background: #222;} 
+.main-navigation li.current-menu-parent:hover > a{background: #222!important;}
+.main-navigation li:hover a {background: #222;}
+.main-navigation > li > a, .main-navigation li.current_page_ancestor a {
+	background-color: #222;
+}
+.main-navigation ul ul li a:hover,#main-navigation ul ul li a:hover i, .main-navigation li.current-menu-parent ul.sub-menu li.current_page_item a   {  color:#CCC;}
+.topbar_content_left .contact i {
+    color: #222;
+}
+.entry-header {
+	background: #222;
+}
+.page-header {
+	background: #222;
+}
+.entry-title {
+	background: #222;
+}
+#smoothup:hover {
+	background-color: #222; 
+}
+.thumbs-more-link a:hover{
+	background-color: #222;
+}
+.grid-more-link {
+	background-color: #222;
+}
+.testimonial-client-name a{
+	color: #222;
+}
+.testimonial-client-name {
+	color: #222;
+}
+.testimonial_home .testimonial .quote {
+	color: #222;
+}
+.tagcloud a {
+	background: #222;
+	border: 1px solid #222;
+}
+.genericon:hover {
+	color: #222;
+}
+.social-media li:hover {
+	border: 1px solid #222;
+	color: #222;
+}
+.nav-social-btn i {
+	color: #222;
+}
+.main-small-navigation .menu li a{
+	color: #FFF;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover {
+	color: #FFF;
+}
+.topbar_content_left:before {
+	color: #222;
+}
+.socialIcons a, .socialIcons a:visited {
+	color: #222;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #999;
+}
+.entry-content a:hover, .entry-summary a:hover{
+    color: #666;
+}
+.grid-more-link a, .grid-more-link a:visited, .grid-more-link a hover{
+	color: #FFF;
+}
+.nav-social-btn:hover i,
+.nav-social-btn:focus i {
+	color: #222;
+}
+#featuretext_container {
+	background-color: #222;
+}
+.unity-separator {
+    background-color: #222;
+}
+.flex-more-link a {
+	background-color: #222;
+}
+.featuretext {
+	background-color: #222;
+}
+.recent_title{
+    background: #222;
+}

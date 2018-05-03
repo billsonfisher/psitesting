@@ -1,0 +1,103 @@
+/**
+ * @package premier
+ * @since premier 1.0
+ *
+ */
+ 
+a.more-link {
+	background-color: #d72d00;
+}
+.main-navigation li.current_page_item,  #main-navigation li.current-menu-parent{background: #d72d00;}
+.main-navigation li.current_page_item:hover a,#main-navigation li.current_page_item:hover{background: #d72d00;} 
+.main-navigation li.current-menu-parent:hover > a{background: #d72d00!important;}
+.main-navigation li:hover a {background: #d72d00;}
+.main-navigation > li > a, .main-navigation li.current_page_ancestor a {
+	background-color: #d72d00;
+}
+.topbar_content_left .contact i {
+    color: #d72d00;
+}
+.entry-header {
+	background: #d72d00;
+}
+.page-header {
+	background: #d72d00;
+}
+.entry-title {
+	background: #d72d00;
+}
+#smoothup:hover {
+	background-color: #d72d00; 
+}
+.thumbs-more-link a:hover{
+	background-color: #d72d00;
+}
+.grid-more-link {
+	background-color: #d72d00;
+}
+.testimonial-client-name a{
+	color: #d72d00;
+}
+.testimonial-client-name {
+	color: #d72d00;
+}
+.testimonial_home .testimonial .quote {
+	color: #d72d00;
+}
+.tagcloud a {
+	background: #d72d00;
+	border: 1px solid #d72d00;
+}
+.genericon:hover {
+	color: #d72d00;
+}
+.social-media li:hover {
+	border: 1px solid #d72d00;
+	color: #d72d00;
+}
+.nav-social-btn i {
+	color: #d72d00;
+}
+.main-small-navigation .menu li a{
+	color: #d72d00;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover {
+	color: #d72d00;
+}
+.topbar_content_left:before {
+	color: #d72d00;
+}
+.socialIcons a, .socialIcons a:visited {
+	color: #d72d00;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #d72d00;
+}
+.entry-content a:hover, .entry-summary a:hover{
+    color: #666;
+}
+.grid-more-link a, .grid-more-link a:visited, .grid-more-link a hover{
+	color: #FFF;
+}
+.nav-social-btn:hover i,
+.nav-social-btn:focus i {
+	color: #d72d00;
+}
+#featuretext_container {
+	background-color: #d72d00;
+}
+.unity-separator {
+    background-color: #d72d00;
+}
+.flex-more-link a {
+	background-color: #d72d00;
+}
+.featuretext {
+	background-color: #d72d00;
+}
+.recent_title{
+    background: #d72d00;
+}

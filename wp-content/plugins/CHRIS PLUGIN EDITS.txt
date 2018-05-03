@@ -1,0 +1,186 @@
+The following is a list of changes Chris has made to plugins to modify as we require:
+
+What:			WP-Quiz-Pro only allows for 15 Graduations. Chris has modified to allow for 76 (as there are 75 (plus a 0 score (76 in total)) questions on the Critical Thinking test).
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_QuizEdit.php
+Original Code:		for ($i = 0; $i < 15; $i++) {
+New Code:		for ($i = 0; $i < 76; $i++) {
+Original Code:		<li><?php _e('Maximal 15 levels', 'wp-pro-quiz'); ?></li>
+New Code:		<li><?php _e('Maximal 76 levels', 'wp-pro-quiz'); ?></li>
+
+
+
+What:			WP-Quiz-Pro does not show the question number when displaying the question calculation method (after the candidate has sumbitted the test). Chris has modified this to allow for the question number to display above the "CORRECT" or "INCORRECT" text.
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Original Code:		Code to be inserted directly below:     <div class="wpProQuiz_question" style="margin: 10px 0 0 0;">
+New Code:		
+<div class="wpProQuiz_question_title">
+	<h5>
+		<?php 
+			$_title = trim(do_shortcode(apply_filters('comment_text', $question->gettitle())));
+				
+			if (strpos($_title, '<p') === 0) {echo $_title;} else {echo '<p>', $_title, '</p>';}
+		?>
+	</h5>
+</div>
+
+
+
+What:			There is no submit button on the test until you reach the last question or click the overview button. Chris has modified so the candidate can submit from anywhere within the test.
+			Also changed the name of the review button from 'Review Question' to 'Mark/Unmark for review'
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Original Code:		
+private function showReviewBox($questionCount)
+{
+    ?>
+    <div class="wpProQuiz_reviewDiv" style="display: none;">
+        <div class="wpProQuiz_reviewQuestion">
+            <ol>
+                <?php for ($xy = 1; $xy <= $questionCount; $xy++) { ?>
+                    <li><?php echo $xy; ?></li>
+                <?php } ?>
+            </ol>
+            <div style="display: none;"></div>
+        </div>
+        <div class="wpProQuiz_reviewLegend">
+            <ol>
+                <li>
+                    <span class="wpProQuiz_reviewColor" style="background-color: #6CA54C;"></span>
+                    <span class="wpProQuiz_reviewText"><?php _e('Answered', 'wp-pro-quiz'); ?></span>
+                </li>
+                <li>
+                    <span class="wpProQuiz_reviewColor" style="background-color: #FFB800;"></span>
+                    <span class="wpProQuiz_reviewText"><?php _e('Review', 'wp-pro-quiz'); ?></span>
+                </li>
+            </ol>
+            <div style="clear: both;"></div>
+        </div>
+        <div>
+            <?php if ($this->quiz->getQuizModus() != WpProQuiz_Model_Quiz::QUIZ_MODUS_SINGLE) { ?>
+                <input type="button" name="review" value="<?php _e('Review question', 'wp-pro-quiz'); ?>"
+                       class="wpProQuiz_button2" style="float: left; display: block;">
+                <?php if (!$this->quiz->isQuizSummaryHide()) { ?>
+                    <input type="button" name="quizSummary"
+                           value="<?php echo $this->_buttonNames['quiz_summary']; ?>" class="wpProQuiz_button2"
+                           style="float: right;">
+                <?php } ?>
+                <div style="clear: both;"></div>
+            <?php } ?>
+        </div>
+    </div>
+    <?php
+}
+New Code:	
+private function showReviewBox($questionCount)
+{
+    ?>
+    <div class="wpProQuiz_reviewDiv" style="display: none;">
+        <div class="wpProQuiz_reviewQuestion">
+            <ol>
+                <?php for ($xy = 1; $xy <= $questionCount; $xy++) { ?>
+                    <li><?php echo $xy; ?></li>
+                <?php } ?>
+            </ol>
+            <div style="display: none;"></div>
+        </div>
+        <div class="wpProQuiz_reviewLegend">
+            <ol>
+                <li>
+                    <span class="wpProQuiz_reviewColor" style="background-color: #6CA54C;"></span>
+                    <span class="wpProQuiz_reviewText"><?php _e('Answered', 'wp-pro-quiz'); ?></span>
+                </li>
+                <li>
+                    <span class="wpProQuiz_reviewColor" style="background-color: #FFB800;"></span>
+                    <span class="wpProQuiz_reviewText"><?php _e('Marked for Review', 'wp-pro-quiz'); ?></span>
+                </li>
+            </ol>
+            <div style="clear: both;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="display: table-cell; text-align: left;">
+		<?php if ($this->quiz->getQuizModus() != WpProQuiz_Model_Quiz::QUIZ_MODUS_SINGLE) { ?>
+		<input type="button" name="review" value="<?php _e('Mark/Unmark for review', 'wp-pro-quiz'); ?>" class="wpProQuiz_button2">
+            </div>
+	    <div style="display: table-cell; text-align: center;">
+		<?php if (!$this->quiz->isQuizSummaryHide()) { ?>
+		<input type="button" name="quizSummary" value="<?php echo $this->_buttonNames['quiz_summary']; ?>" class="wpProQuiz_button2">
+            </div>
+            <?php } ?>
+            <?php } ?>
+		<div style="display: table-cell; text-align: right;">
+		<input type="button" name="endQuizSummary" value="<?php echo $this->_buttonNames['finish_quiz']; ?>" class="wpProQuiz_button">
+            </div>
+        </div>
+    </div>
+    <?php
+
+
+What:			The question number and question category headings look the same. Chris has edited so they can be visually distinguished.
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Original Code:		
+<div style="font-weight: bold; padding-top: 5px;">
+	<?php printf(__('Category: %s', 'wp-pro-quiz'),
+	esc_html($question->getCategoryName())); ?>
+</div>
+New Code:
+<h4>
+	<?php printf(__('Category: %s', 'wp-pro-quiz'),
+	esc_html($question->getCategoryName())); ?>
+</h4>
+
+
+What:			Removing 'Result' heading when reviewing the candidate output. This will enable us to add the Result for [user name] header into the graduation instead
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Original Code:		<h4 class="wpProQuiz_header"><?php _e('Results', 'wp-pro-quiz'); ?></h4>
+New Code:		<h4 class="wpProQuiz_header"><?php _e('', 'wp-pro-quiz'); ?></h4>
+
+
+What:			Adds the candidate name as a header on the testing results output page
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Add new code under:
+<div style="display: none;" class="wpProQuiz_results">
+New Code:		
+<div class="wpProQuiz_catOverview">
+	<p>
+		<?php $user_info = wp_get_current_user(); echo "<h4>Results for " . $user_info->first_name . " " . $user_info->last_name . "</4>"; ?>
+	</p>
+</div>
+
+
+What:			Adds the standard deviation spiel to the results page.
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Add new code under:
+<div>
+	<ul class="wpProQuiz_resultsList">
+	<?php foreach ($result['text'] as $resultText) { ?>
+		<li style="display: none;">
+		<div>
+			<?php echo do_shortcode(apply_filters('comment_text', $resultText)); ?>
+		</div>
+		</li>
+	<?php } ?>
+	</ul>
+</div>
+New Code:		
+<div class="wpProQuiz_catOverview">
+	<p>
+		<?php _e('<p>The results for this test have been standardised based on estimates of the spread of results in the normal adult population. Typically, if we assess a representative sample of the normal adult population, we get a bell curve as shown above. On most trait-based attributes, a few people get very low scores, a few people get very high scores and most get scores in the middle (average range). Your score has been reported as a percentile and the chart above explains what the corresponding range is, in comparison to other adults.</p><p>A percentile does not tell you the percentage you got correct. It tells us how your result compares to other adults. For example, a score at the 56<sup>th</sup> percentile, that would mean a person scored better than 56% of the normal adult population on that test (or in the top 44% of the population).</p><p>Test results will vary from occasion to occasion, so you are advised to note the range your score fell in, rather than the percentile.</p>'); ?>
+	</p>
+</div>
+<div class="wpProQuiz_resultsprinttext">
+	<p>
+		<?php _e('<p>If you wish to retain a copy of this report <a href="javascript:window.print()">please print this page</a>.</p>'); ?>
+	</p>
+</div>
+
+
+
+What:			Changes the text in the button on the results page.
+Where:			\wp-pro-quiz\lib\view\WpProQuiz_View_FrontQuiz
+Original Code:		value="<?php _e('View questions', 'wp-pro-quiz'); ?>">
+New Code:		value="<?php _e('View Questions and Coaching Strategies', 'wp-pro-quiz'); ?>">
+
+TEMPLATE
+What:			
+Where:			
+Original Code:		
+New Code:		

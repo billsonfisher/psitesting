@@ -1,0 +1,42 @@
+.pms-credit-card-information{
+    display:none;
+}
+
+.pms-billing-details{
+    display:none;
+}
+
+#pms_billing_country{
+    width:100%;
+}
+
+/*
+* Styling Billing and Credit Card fields for Profile Builder register form
+*
+*/
+.wppb-form-field.wppb-subscription-plans .pms-form-fields-wrapper label {
+    width: 30%;
+    float: left;
+    padding-bottom: 5px;
+}
+
+.wppb-form-field .pms-form-fields-wrapper #pms_card_exp_month, .wppb-form-field .pms-form-fields-wrapper #pms_card_exp_year{
+    width: 15%;
+}
+
+.wppb-form-field .pms-field-card-expiration select {
+    float: none;
+}
+
+.wppb-form-field .pms-form-fields-wrapper .pms_expiration_date_separator {
+    padding: 0 5px;
+}
+
+.wppb-form-field #pms_billing_country {
+    width:69.9%;
+}
+
+.wppb-form-field.wppb-subscription-plans .pms-form-fields-wrapper input {
+    margin-right: 0 !important;
+}
+

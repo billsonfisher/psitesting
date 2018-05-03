@@ -1,0 +1,108 @@
+/**
+ * @package premier
+ * @since premier 1.0
+ *
+ */
+ 
+a.more-link {
+	background-color: #969;
+}
+.main-navigation li.current_page_item,  #main-navigation li.current-menu-parent{background: #969;}
+.main-navigation li.current_page_item:hover a,#main-navigation li.current_page_item:hover{background: #969;} 
+.main-navigation li.current-menu-parent:hover > a{background: #969!important;}
+.main-navigation li:hover a {background: #969;}
+.main-navigation > li > a, .main-navigation li.current_page_ancestor a {
+	background-color: #969;
+}
+.topbar_content_left .contact i {
+    color: #969;
+}
+.entry-header {
+	background: #969;
+}
+.page-header {
+	background: #969;
+}
+.entry-title {
+	background: #969;
+}
+#smoothup:hover {
+	background-color: #969; 
+}
+.thumbs-more-link a:hover{
+	background-color: #969;
+}
+.grid-more-link {
+	background-color: #969;
+}
+.testimonial-client-name a{
+	color: #969;
+}
+.testimonial-client-name {
+	color: #969;
+}
+.testimonial_home .testimonial .quote {
+	color: #969;
+}
+
+.section_testimonials_home {
+	background: url(../images/fclogo.png) 50% 0 repeat fixed; 
+}
+
+.tagcloud a {
+	background: #969;
+	border: 1px solid #969;
+}
+.genericon:hover {
+	color: #969;
+}
+.social-media li:hover {
+	border: 1px solid #969;
+	color: #969;
+}
+.nav-social-btn i {
+	color: #969;
+}
+.main-small-navigation .menu li a{
+	color: #969;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover {
+	color: #969;
+}
+.topbar_content_left:before {
+	color: #969;
+}
+.socialIcons a, .socialIcons a:visited {
+	color: #969;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #969;
+}
+.entry-content a:hover, .entry-summary a:hover{
+    color: #666;
+}
+.grid-more-link a, .grid-more-link a:visited, .grid-more-link a hover{
+	color: #FFF;
+}
+.nav-social-btn:hover i,
+.nav-social-btn:focus i {
+	color: #969;
+}
+#featuretext_container {
+	background-color: #969;
+}
+.unity-separator {
+    background-color: #969;
+}
+.flex-more-link a {
+	background-color: #969;
+}
+.featuretext {
+	background-color: #969;
+}
+.recent_title{
+    background: #969;
+}

@@ -1,0 +1,108 @@
+/**
+ * @package premier
+ * @since premier 1.0
+ *
+ */
+ 
+a.more-link {
+	background-color: #ff46a3;
+}
+.main-navigation li.current_page_item,  #main-navigation li.current-menu-parent{background: #ff46a3;}
+.main-navigation li.current_page_item:hover a,#main-navigation li.current_page_item:hover{background: #ff46a3;} 
+.main-navigation li.current-menu-parent:hover > a{background: #ff46a3!important;}
+.main-navigation li:hover a {background: #ff46a3;}
+.main-navigation > li > a, .main-navigation li.current_page_ancestor a {
+	background-color: #ff46a3;
+}
+.topbar_content_left .contact i {
+    color: #ff46a3;
+}
+.entry-header {
+	background: #ff46a3;
+}
+.page-header {
+	background: #ff46a3;
+}
+.entry-title {
+	background: #ff46a3;
+}
+#smoothup:hover {
+	background-color: #ff46a3; 
+}
+.thumbs-more-link a:hover{
+	background-color: #ff46a3;
+}
+.grid-more-link {
+	background-color: #ff46a3;
+}
+.testimonial-client-name a{
+	color: #ff46a3;
+}
+.testimonial-client-name {
+	color: #ff46a3;
+}
+.testimonial_home .testimonial .quote {
+	color: #ff46a3;
+}
+
+.section_testimonials_home {
+	background: url(../images/fclogo.png) 50% 0 repeat fixed; 
+}
+
+.tagcloud a {
+	background: #ff46a3;
+	border: 1px solid #ff46a3;
+}
+.genericon:hover {
+	color: #ff46a3;
+}
+.social-media li:hover {
+	border: 1px solid #ff46a3;
+	color: #ff46a3;
+}
+.nav-social-btn i {
+	color: #ff46a3;
+}
+.main-small-navigation .menu li a{
+	color: #ff46a3;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover {
+	color: #ff46a3;
+}
+.topbar_content_left:before {
+	color: #ff46a3;
+}
+.socialIcons a, .socialIcons a:visited {
+	color: #ff46a3;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #ff46a3;
+}
+.entry-content a:hover, .entry-summary a:hover{
+    color: #666;
+}
+.grid-more-link a, .grid-more-link a:visited, .grid-more-link a hover{
+	color: #FFF;
+}
+.nav-social-btn:hover i,
+.nav-social-btn:focus i {
+	color: #ff46a3;
+}
+#featuretext_container {
+	background-color: #ff46a3;
+}
+.unity-separator {
+    background-color: #ff46a3;
+}
+.flex-more-link a {
+	background-color: #ff46a3;
+}
+.featuretext {
+	background-color: #ff46a3;
+}
+.recent_title{
+    background: #ff46a3;
+}

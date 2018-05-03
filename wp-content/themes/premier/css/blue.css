@@ -1,0 +1,104 @@
+/**
+ * @package premier
+ * @since premier 1.0
+ *
+ */
+
+a.more-link {
+	background-color: #69C;
+}
+.main-navigation li.current_page_item,  #main-navigation li.current-menu-parent{background: #69C;}
+.main-navigation li.current_page_item:hover a,#main-navigation li.current_page_item:hover{background: #69C;} 
+.main-navigation li.current-menu-parent:hover > a{background: #69C!important;}
+.main-navigation li:hover a {background: #69C;}
+.entry-header {
+	background: #69C;
+}
+.main-navigation > li > a, .main-navigation li.current_page_ancestor a {
+	background-color: #69C;
+}
+.page-header {
+	background: #69C;
+}
+.topbar_content_left .contact i  {
+    color: #69C;
+}
+.entry-title {
+	background: #69C;
+}
+#smoothup:hover {
+	background-color: #69C; 
+}
+.thumbs-more-link a:hover{
+	background-color: #69C;
+}
+.grid-more-link{
+	background-color: #69C;
+}
+.testimonial-client-name a{
+	color: #69C;
+}
+.testimonial-client-name {
+	color: #69C;
+}
+.testimonial_home .testimonial .quote {
+	color: #69C;
+}
+
+.tagcloud a {
+	background: #69C;
+	border: 1px solid #69C;
+}
+.genericon:hover {
+	color: #69C;
+}
+.social-media li:hover {
+	border: 1px solid #69C;
+	color: #69C;
+}
+.nav-social-btn i {
+	color: #69C;
+}
+.main-small-navigation .menu li a{
+	color: #69C;
+}
+.main-small-navigation li:hover > a,
+.main-small-navigation li.current_page_item a,
+.main-small-navigation li.current-menu-item a,
+.main-small-navigation ul ul a:hover {
+	color: #69C;
+}
+.topbar_content_left:before {
+	color: #69C;
+}
+.socialIcons a, .socialIcons a:visited {
+	color: #69C;
+}
+.entry-content a, .entry-content a:visited, .entry-summary a, .entry-summary a:visited{
+    color: #69C;
+}
+.entry-content a:hover, .entry-summary a:hover{
+    color: #666;
+}
+.grid-more-link a, .grid-more-link a:visited, .grid-more-link a hover{
+	color: #FFF;
+}
+.nav-social-btn:hover i,
+.nav-social-btn:focus i {
+	color: #69C;
+}
+#featuretext_container {
+	background-color: #69C;
+}
+.unity-separator {
+    background-color: #69C;
+}
+.flex-more-link a {
+	background-color: #69C;
+}
+.featuretext {
+	background-color: #69C;
+}
+.recent_title{
+    background: #69C;
+}
